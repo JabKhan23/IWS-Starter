@@ -1,7 +1,7 @@
 Coverage: 34%
-# Project Title
+# IMS - Starter - Jab
 
-One Paragraph of project description goes here
+This project hosts a system where the user can create and view orders. They will be able to create a profile as well.
 
 ## Getting Started
 
