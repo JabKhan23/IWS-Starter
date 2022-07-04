@@ -1,7 +1,7 @@
 Coverage: 34%
-# Project Title
+# IMS - Starter - Jab
 
-One Paragraph of project description goes here
+This project hosts a system where the user can create and view orders. They will be able to create a profile as well.
 
 ## Getting Started
 
@@ -9,10 +9,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+The following software will need to be installed to get the program running succesfully
 
 ```
-Give examples
+Version Control System - Git
+Source Code Management - GitHub
+Kanban Board - Jira
+Database - MySQL Server 5.7+ (local or cloud hosted)
+Back-end Programming Language - Java
+Build Tool - Maven
+Unit Testing - JUnit
 ```
 
 ### Installing
