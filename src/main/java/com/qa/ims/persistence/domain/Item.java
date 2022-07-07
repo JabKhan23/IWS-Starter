@@ -50,43 +50,43 @@ public class Item {
 		return "id:" + itemId + " Item:" + itemName + " Price:" + itemPrice;
 	}
 	
+
+
+
+	public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((itemId== null) ? 0 : itemId.hashCode());
+	result = prime * result + ((itemName == null) ? 0 : itemName.hashCode());
+	return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Item other = (Item) obj;
+		if (getItemName() == null) {
+			if (other.getItemName() != null)
+				return false;
+		} else if (!getItemName().equals(other.getItemName()))
+			return false;
+		if (itemId == null) {
+			if (other.itemId != null)
+				return false;
+		} else if (!itemId.equals(other.itemId))
+			return false;
+//	} else if(itemPrice == 0)
+//				return false;
+		
+		return true;
+	}
+
 }
 
-//	@Override
-//	public int hashCode() {
-//		final int prime = 31;
-//		int result = 1;
-//		result = prime * result + ((itemName == null) ? 0 : itemName.hashCode());
-//		result = prime * result + ((itemId == null) ? 0 : itemId.hashCode());
-//		//result = prime * result + ((itemPrice == null) ? 0 : surname.hashCode());
-//		return result;
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Item other = (Item) obj;
-//		if (getItemName() == null) {
-//			if (other.getItemName() != null)
-//				return false;
-//		} else if (!getItemName().equals(other.getItemName()))
-//			return false;
-//		if (itemId == null) {
-//			if (other.itemId != null)
-//				return false;
-//		} else if (!itemId.equals(other.itemId))
-//			return false;
-////		if (getItemPrice == null) {
-////			if (other.itemPrice != null)
-////				return false;
-////		} else if (!surname.equals(other.surname))
-////			return false;
-//		return true;
-//	}
-//
-//}

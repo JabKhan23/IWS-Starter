@@ -45,6 +45,7 @@ public class Utils {
 			try {
 				input = getString();
 				doubleInput = Double.parseDouble(input);
+				doubleInput = (double) 0;
 			} catch (NumberFormatException nfe) {
 				LOGGER.info("Error - Please enter a number");
 			}
