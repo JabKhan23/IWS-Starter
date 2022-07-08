@@ -1,15 +1,26 @@
 Coverage: 34%
 # IMS - Starter - Jab
 
+<<<<<<< HEAD
 This project hosts a system where the user can create and view orders. They will be able to create a profile as well.
+=======
+This project hosts an Inventory Management System where the user can create and view orders. The application will be tested and will have a coverage of at least 80.
+>>>>>>> dev
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1. Clone the repo to your local machine
+2. Running the jar file that comes with the repo
+
+You might need to check if you have admin access to command prompt. It should run fine without it.
 
 ### Prerequisites
 
+<<<<<<< HEAD
 The following software will need to be installed to get the program running succesfully
+=======
+These are the tools I used to set the project up and to document the journey. 
+>>>>>>> dev
 
 ```
 Version Control System - Git
@@ -20,6 +31,8 @@ Back-end Programming Language - Java
 Build Tool - Maven
 Unit Testing - JUnit
 ```
+
+The project should run independently from using these tools. At the very least, please have the latest version of mySQL installed.
 
 ### Installing
 

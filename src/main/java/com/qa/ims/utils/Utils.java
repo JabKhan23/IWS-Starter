@@ -38,6 +38,21 @@ public class Utils {
 		return scanner.nextLine();
 	}
 
+	public Float getFloat() {
+		String input = null;
+		Float floatInput = null;
+		do {
+			try {
+				input = getString();
+				floatInput = Float.parseFloat(input);
+				//floatInput = (Float) 0;
+			} catch (NumberFormatException nfe) {
+				LOGGER.info("Error - Please enter a number");
+			}
+		} while (floatInput == null);
+		return floatInput;
+	}
+	
 	public Double getDouble() {
 		String input = null;
 		Double doubleInput = null;
