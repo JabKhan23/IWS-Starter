@@ -36,9 +36,9 @@ PRIMARY KEY (`orderID`),
 FOREIGN KEY (`customerID`) REFERENCES customers(`id`) ON DELETE CASCADE
 );
  
- SELECT *
-FROM `orders`;
-
+SELECT * FROM orders;
+ 
+SELECT * FROM orderRequest;
 CREATE TABLE IF NOT EXISTS `orderRequest` (
   `orderRequestID` INT NOT NULL AUTO_INCREMENT,
   `orderID` INT NOT NULL,
