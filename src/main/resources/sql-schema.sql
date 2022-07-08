@@ -1,4 +1,4 @@
-drop schema ims;
+DROP SCHEMA IF EXISTS ims;
 
 CREATE SCHEMA IF NOT EXISTS `ims`;
 
@@ -30,16 +30,32 @@ DROP TABLE `items`;
 DROP TABLE `orders`;
 
 CREATE TABLE IF NOT EXISTS `orders`(
-`orderID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`itemID` int,
-`customerID` INT,
-
-
-CONSTRAINT FOREIGN KEY (customerID) references customers(id) ON DELETE CASCADE,
-CONSTRAINT FOREIGN KEY (itemID) references items (itemId) ON DELETE CASCADE
- );
+`orderID` INT NOT NULL AUTO_INCREMENT,
+`customerID` INT NOT NULL,
+PRIMARY KEY (`orderID`),
+FOREIGN KEY (`customerID`) REFERENCES customers(`id`) ON DELETE CASCADE
+);
  
  SELECT *
 FROM `orders`;
+
+CREATE TABLE IF NOT EXISTS `orderRequest` (
+  `orderRequestID` INT NOT NULL AUTO_INCREMENT,
+  `orderID` INT NOT NULL,
+  `itemId` INT NOT NULL,
+  `quantity` INT NOT NULL,
+   PRIMARY KEY (`orderRequestID`),
+   FOREIGN KEY (`itemId`) References items(`itemId`)
+   ON DELETE CASCADE,
+  FOREIGN KEY (`orderID`) references orders(`orderID`)
+   ON DELETE CASCADE) ;
+
+SELECT *
+FROM orderRequest;
+
+DROP TABLE `orderRequest`;
+
+ 
+ 
 
 

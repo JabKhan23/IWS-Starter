@@ -10,7 +10,7 @@ public class Runner {
 	public static void main(String[] args) {
 		IMS ims = new IMS();
 		ims.imsSystem();
-		LOGGER.info("Thank you for using this service.");
+		LOGGER.info("Thank you for using this service. Goodbye");
 	}
 
 }

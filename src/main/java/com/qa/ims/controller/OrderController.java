@@ -52,12 +52,12 @@ public class OrderController implements CrudController<Order> {
 	 */
 	@Override
 	public Order update() {
-		LOGGER.info("Please enter the customer id for the order you would like to update");
-		Long id = utils.getLong();
-		LOGGER.info("Please enter the item id you want to add");
-		Long item_id = utils.getLong();
+		LOGGER.info("Please enter the id for the order you would like to update");
+		Long orderId = utils.getLong();
+		LOGGER.info("Please enter the customer id you want to add");
+		Long customerId = utils.getLong();
 		LOGGER.info("Product Updated");
-		Order order = orderDAO.update(new Order(id,item_id));
+		Order order = orderDAO.update(new Order(orderId,customerId));
 		return order;
 	}
 
