@@ -1,15 +1,26 @@
 Coverage: 34%
 # IMS - Starter - Jab
 
+<<<<<<< HEAD
 This project hosts a system where the user can create and view orders. They will be able to create a profile as well.
+=======
+This project hosts an Inventory Management System where the user can create and view orders. The application will be tested and will have a coverage of at least 80.
+>>>>>>> dev
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1. Clone the repo to your local machine
+2. Running the jar file that comes with the repo
+
+You might need to check if you have admin access to command prompt. It should run fine without it.
 
 ### Prerequisites
 
+<<<<<<< HEAD
 The following software will need to be installed to get the program running succesfully
+=======
+These are the tools I used to set the project up and to document the journey. 
+>>>>>>> dev
 
 ```
 Version Control System - Git
@@ -21,54 +32,97 @@ Build Tool - Maven
 Unit Testing - JUnit
 ```
 
+The project should run independently from using these tools. At the very least, please have the latest version of mySQL installed.
+
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
 
 ```
-Give the example
+In order to get things running, you will need to have Eclispe or similar to access the development area. You can then see the IMS project and look at how I developed it. Most of the methods are self-explanatory but there will be comments around.  
 ```
 
-And repeat
-
 ```
-until finished
+There is also a jar file in target that can be ran in CMD. However if running to test the package. It might be worth updating the database if not already.
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+This is the Runner Script as an example
+```
+public class Runner {
+
+	public static final Logger LOGGER = LogManager.getLogger();
+
+	public static void main(String[] args) {
+		IMS ims = new IMS();
+		ims.imsSystem();
+		LOGGER.info("Thank you for using this service. Goodbye");
+	}
+
+}
+
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
+The tests can be ran from the development area. These tests check if the software can function independently or with a database
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
+Unit tests checks if the system runs and the code can be read. 
+
+A brief example can be found below for the Customer class.
 
 ```
-Give an example
+	@Test
+	public void testCreate() {
+		final String F_NAME = "barry", L_NAME = "scott";
+		final Customer created = new Customer(F_NAME, L_NAME);
+		Mockito.when(utils.getString()).thenReturn(F_NAME, L_NAME);
+		Mockito.when(dao.create(created)).thenReturn(created);
+
+		assertEquals(created, controller.create());
+
+		Mockito.verify(utils, Mockito.times(2)).getString();
+		Mockito.verify(dao, Mockito.times(1)).create(created);
+	}
 ```
 
 ### Integration Tests 
-Explain what these tests test, why and how to run them
+These test if the database is working with the application so it sends dummy results to a test schema within SQL. A brief example can be found below
 
 ```
-Give an example
+
+	@Test
+	public void testReadAll() {
+		List<Customer> expected = new ArrayList<>();
+		expected.add(new Customer(3L, "jordan", "harrison"));
+		assertEquals(expected, DAO.readAll());
+	}
 ```
 
 ### And coding style tests
 
-Explain what these tests test and why
+Coding styles test how your code is implemented and if there could be any improvements. 
 
 ```
-Give an example
+	public void testDelete() {
+		final long ID = 1L;
+
+		Mockito.when(utils.getLong()).thenReturn(ID);
+		Mockito.when(dao.delete(ID)).thenReturn(1);
+
+		assertEquals(1L, this.controller.delete());
+
+		Mockito.verify(utils, Mockito.times(1)).getLong();
+		Mockito.verify(dao, Mockito.times(1)).delete(ID);
+	}
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+
+This has been built with Maven in mind and tested to over 80% coverage.
 
 ## Built With
 
@@ -78,9 +132,18 @@ Add additional notes about how to deploy this on a live system
 
 We use [SemVer](http://semver.org/) for versioning.
 
+## Jira link
+
+The Jira link can be found here [Jira](https://jabkhan.atlassian.net/jira/software/projects/SCFPJ/boards/2/roadmap?selectedIssue=SCFPJ-14).
+
+## Documentation
+
+The Documentation should be all added to the main branch - pictures, excel and powerpoing documents are located there.
+
 ## Authors
 
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Jabaran Khan** - *Updated framework* - [JabKhan23](https://github.com/JabKhan23)
 
 ## License
 
@@ -90,7 +153,8 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Help from QA, StackOverflow, w3Schools for providing the framework to get the code functioning
+* Thanks
 # IWS-Starter
+
+

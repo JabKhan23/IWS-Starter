@@ -6,7 +6,13 @@ import org.apache.logging.log4j.Logger;
 import com.qa.ims.controller.Action;
 import com.qa.ims.controller.CrudController;
 import com.qa.ims.controller.CustomerController;
+import com.qa.ims.controller.ItemController;
+import com.qa.ims.controller.OrderController;
+import com.qa.ims.controller.OrderRequestController;
 import com.qa.ims.persistence.dao.CustomerDAO;
+import com.qa.ims.persistence.dao.ItemDAO;
+import com.qa.ims.persistence.dao.OrderDAO;
+import com.qa.ims.persistence.dao.OrderRequestDAO;
 import com.qa.ims.persistence.domain.Domain;
 import com.qa.ims.utils.DBUtils;
 import com.qa.ims.utils.Utils;
@@ -16,12 +22,21 @@ public class IMS {
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	private final CustomerController customers;
+	private final ItemController items;
+	private final OrderController orders;
+	private final OrderRequestController orderRequests;
 	private final Utils utils;
 
 	public IMS() {
 		this.utils = new Utils();
 		final CustomerDAO custDAO = new CustomerDAO();
+		final ItemDAO itemsDAO = new ItemDAO();
+		final OrderDAO ordersDAO = new OrderDAO();
+		final OrderRequestDAO orderRequestsDAO = new OrderRequestDAO();
 		this.customers = new CustomerController(custDAO, utils);
+		this.items = new ItemController(itemsDAO, utils);
+		this.orders = new OrderController(ordersDAO, utils);
+		this.orderRequests = new OrderRequestController(orderRequestsDAO, utils);
 	}
 
 	public void imsSystem() {
@@ -50,8 +65,13 @@ public class IMS {
 				active = this.customers;
 				break;
 			case ITEM:
+				active = this.items;
 				break;
 			case ORDER:
+				active = this.orders;
+				break;
+			case ORDER_REQUEST:
+				active = this.orderRequests;
 				break;
 			case STOP:
 				return;
@@ -59,7 +79,7 @@ public class IMS {
 				break;
 			}
 
-			LOGGER.info(() ->"What would you like to do with " + domain.name().toLowerCase() + ":");
+			LOGGER.info(() ->"What would you like to do with " + domain.name().toLowerCase() + "?"+ ":");
 
 			Action.printActions();
 			Action action = Action.getAction(utils);
