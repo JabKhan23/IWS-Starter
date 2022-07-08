@@ -77,7 +77,7 @@ public class IMS {
 				return;
 			default:
 				break;
-			}
+			} //the user input screen
 
 			LOGGER.info(() ->"What would you like to do with " + domain.name().toLowerCase() + "?"+ ":");
 
@@ -110,7 +110,7 @@ public class IMS {
 			break;
 		default:
 			break;
-		}
+		} //ensure that the CRUD is working for all controllers
 	}
 
 }

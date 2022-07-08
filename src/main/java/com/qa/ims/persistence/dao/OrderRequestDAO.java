@@ -161,6 +161,8 @@ public class OrderRequestDAO implements Dao<OrderRequest> {
 		}
 		return null;
 	}
+	
+	//Calculates the sum of all costs and can be updated
 
 
 
