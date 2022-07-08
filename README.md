@@ -1,11 +1,10 @@
-Coverage: 34%
+
 # IMS - Starter - Jab
 
-<<<<<<< HEAD
+
 This project hosts a system where the user can create and view orders. They will be able to create a profile as well.
 =======
 This project hosts an Inventory Management System where the user can create and view orders. The application will be tested and will have a coverage of at least 80.
->>>>>>> dev
 
 ## Getting Started
 
@@ -16,11 +15,9 @@ You might need to check if you have admin access to command prompt. It should ru
 
 ### Prerequisites
 
-<<<<<<< HEAD
 The following software will need to be installed to get the program running succesfully
 =======
-These are the tools I used to set the project up and to document the journey. 
->>>>>>> dev
+
 
 ```
 Version Control System - Git
